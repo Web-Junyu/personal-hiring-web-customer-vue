@@ -12,6 +12,7 @@
     "hollowtree.vue-snippets",
     "streetsidesoftware.code-spell-checker",
     "dbaeumer.vscode-eslint",
-    "antfu.vite"
+    "antfu.vite",
+    "ionutvmi.path-autocomplete"
   ]
 }

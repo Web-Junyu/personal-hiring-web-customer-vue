@@ -16,9 +16,12 @@ export default defineConfig({
         port: 3000,
         host: true,
     },
+    envDir: path.resolve(__dirname, './src/environment/'),
     resolve: {
         alias: {
             '@': path.resolve('./src'),
+            '@shared/*': path.resolve('./src/shared/*'),
+            '@core/*': path.resolve('./src/core/*'),
         },
     },
 });
