@@ -1,0 +1,8 @@
+{
+    "watch": ["../mock_server/index.js"],
+    "ignore": [],
+    "script": "index.js",
+    "options": {
+        "exec": "node"
+    }
+}
