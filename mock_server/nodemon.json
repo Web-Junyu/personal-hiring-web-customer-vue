@@ -1,8 +1,8 @@
 {
-    "watch": ["../mock_server/index.js"],
+    "watch": ["../mock_server/*"],
     "ignore": [],
-    "script": "index.js",
+    "script": "index.ts",
     "options": {
-        "exec": "node"
+        "exec": "ts-node index.ts"
     }
 }

@@ -1,7 +1,4 @@
 <template>
-  <!-- <h1>{{ msg }}</h1> -->
-  <!-- <a-button type="primary">Primary Button</a-button> -->
-  <!-- <Login></Login> -->
   <div data-v-038f6593="" class="sem10">
     <div data-v-52de4d2a="" data-v-038f6593="" class="layout">
       <div data-v-b699a0ca="" data-v-52de4d2a="" class="header-container">
@@ -72,39 +69,11 @@
       </div>
       <div data-v-038f6593="" data-v-52de4d2a="" class="bottom-wrap">
         <div data-v-941216c6="" data-v-038f6593="" class="bottom-wrap" data-v-52de4d2a="">
-          <div data-v-941216c6="" class="card"><img data-v-941216c6=""
-              src="./BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png" alt="" class="block float-left img">
+          <div v-for="category in categoryList" :key="category.id" data-v-941216c6="" class="card"><img
+              data-v-941216c6="" :src="category.img" alt="" class="block float-left img">
             <dl data-v-941216c6="" class="overflow-hidden content">
-              <dt data-v-941216c6="" class="title">视频面试</dt>
-              <dd data-v-941216c6="" class="text">不受地域限制，不受传统的上班时间影响，即可连线全球优秀人才。支持3v1多人群面，在线商议结果，进一步提升面试效率</dd>
-            </dl>
-          </div>
-          <div data-v-941216c6="" class="card"><img data-v-941216c6=""
-              src="./BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-2.e9f4c82e.png" alt="" class="block float-left img">
-            <dl data-v-941216c6="" class="overflow-hidden content">
-              <dt data-v-941216c6="" class="title">语音聊天</dt>
-              <dd data-v-941216c6="" class="text">BOSS可选择和求职者语音沟通，能及时快速查看是否符合职位要求</dd>
-            </dl>
-          </div>
-          <div data-v-941216c6="" class="card"><img data-v-941216c6=""
-              src="./BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-3.1cf377ae.png" alt="" class="block float-left img">
-            <dl data-v-941216c6="" class="overflow-hidden content">
-              <dt data-v-941216c6="" class="title">聊天发送位置</dt>
-              <dd data-v-941216c6="" class="text">可向求职者发送公司定位或工作地址，在线查看通勤路线与时间，求职者一目了然</dd>
-            </dl>
-          </div>
-          <div data-v-941216c6="" class="card"><img data-v-941216c6=""
-              src="./BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-4.35080ce3.png" alt="" class="block float-left img">
-            <dl data-v-941216c6="" class="overflow-hidden content">
-              <dt data-v-941216c6="" class="title">线上offer</dt>
-              <dd data-v-941216c6="" class="text">线上OFFER一键速递，可对沟通后的求职者发送线上OFFER，便捷高效揽获求职者</dd>
-            </dl>
-          </div>
-          <div data-v-941216c6="" class="card"><img data-v-941216c6=""
-              src="./BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-5.681fe836.png" alt="" class="block float-left img">
-            <dl data-v-941216c6="" class="overflow-hidden content">
-              <dt data-v-941216c6="" class="title">求职者转发</dt>
-              <dd data-v-941216c6="" class="text">BOSS可以将求职者通过站内、站外推荐给相关同事</dd>
+              <dt data-v-941216c6="" class="title">{{ category.title }}</dt>
+              <dd data-v-941216c6="" class="text">{{ category.description }}</dd>
             </dl>
           </div>
         </div>
@@ -131,12 +100,49 @@
 </template>
 
 <script setup lang="ts">
-import Login from './welcome/Login.vue';
 import { ref } from 'vue'
 
 defineProps<{ msg: string }>()
 
-const count = ref(0)
+const categoryList = ref<Array<Category>>([
+  {
+    id: 1000,
+    title: '视频面试',
+    description: '不受地域限制，不受传统的上班时间影响，即可连线全球优秀人才。支持3v1多人群面，在线商议结果，进一步提升面试效率',
+    img: './BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png',
+  },
+  {
+    id: 1001,
+    title: '语音聊天',
+    description: 'BOSS可选择和求职者语音沟通，能及时快速查看是否符合职位要求',
+    img: './BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png',
+  },
+  {
+    id: 1002,
+    title: '聊天发送位置',
+    description: '可向求职者发送公司定位或工作地址，在线查看通勤路线与时间，求职者一目了然',
+    img: './BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png',
+  },
+  {
+    id: 1003,
+    title: '线上offer',
+    description: '线上OFFER一键速递，可对沟通后的求职者发送线上OFFER，便捷高效揽获求职者',
+    img: './BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png',
+  },
+  {
+    id: 1004,
+    title: '求职者转发',
+    description: 'BOSS可以将求职者通过站内、站外推荐给相关同事',
+    img: './BOSS直聘-找工作上BOSS直聘直接谈！招聘求职找工作！_files/item-1.380a420f.png',
+  },
+])
+
+type Category = {
+  id: number;
+  title: string;
+  description: string;
+  img: string;
+}
 </script>
 
 
